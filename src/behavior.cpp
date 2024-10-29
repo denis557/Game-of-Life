@@ -61,3 +61,21 @@ void Behavior::Update() {
         grid = temp;
     }
 }
+
+void Behavior::Clear_grid() {
+    if(!is_running) {
+        grid.Clear();
+    }
+}
+
+void Behavior::Fill_grid() {
+    if(!is_running) {
+        grid.Fill();
+    }
+}
+
+void Behavior::Toggle_cell_state(size_t row, size_t column) {
+    if(!is_running) {
+        grid.Toggle_cell_state(row, column);
+    }
+}

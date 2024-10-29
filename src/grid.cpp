@@ -28,8 +28,23 @@ size_t Grid::Get_cell(size_t row, size_t column)
 void Grid::Fill() {
     for(size_t i = 0; i < rows; i++) {
         for(size_t j = 0; j < columns; j++) {
-            size_t rand = GetRandomValue(0, 4);
-            cells[i][j] = (rand == 4) ? 1 : 0;
+            size_t rand = GetRandomValue(0, 1);
+            // cells[i][j] = (rand == 4) ? 1 : 0;
+            cells[i][j] = rand;
         }
+    }
+}
+
+void Grid::Clear() {
+    for(size_t i = 0; i < rows; i++) {
+        for(size_t j = 0; j < columns; j++) {
+            cells[i][j] = 0;
+        }
+    }
+}
+
+void Grid::Toggle_cell_state(size_t row, size_t column) {
+    if(row >= 0 && row < rows && column >= 0 && column < columns) {
+        cells[row][column] = !cells[row][column];
     }
 }

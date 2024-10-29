@@ -15,6 +15,8 @@ class Grid
         void Set_cell(size_t row, size_t column, size_t value);
         size_t Get_cell(size_t row, size_t column);
         void Fill();
+        void Clear();
+        void Toggle_cell_state(size_t row, size_t column);
     private:
         size_t rows;
         size_t columns;
